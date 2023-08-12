@@ -8,6 +8,8 @@
     <iframe src="https://player.vimeo.com/video/{{ video_id }}" frameborder="0" allowfullscreen></iframe>
   {% when "youtube" %}
     <iframe src="https://www.youtube.com/embed/{{ video_id }}" frameborder="0" allowfullscreen></iframe>
+  {% when "piped" %}
+    <iframe src="https://piped.video/watch?v={{ video_id }}" frameborder="0" allowfullscreen></iframe>
   {% when "google-drive" %}
     <iframe src="https://drive.google.com/file/d/{{ video_id }}/preview" frameborder="0" allowfullscreen></iframe>
   {% when "bilibili" %}
