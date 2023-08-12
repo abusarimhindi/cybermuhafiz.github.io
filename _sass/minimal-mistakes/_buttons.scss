@@ -43,7 +43,7 @@
   (whatsapp, $whatsapp-color),
   (email, $email-color),
   (telegram, $telegram-color),
-  (copy-color, $copy-color);
+  (copy, $copy);
 
   @each $buttoncolor, $color in $buttoncolors {
     &--#{$buttoncolor} {
