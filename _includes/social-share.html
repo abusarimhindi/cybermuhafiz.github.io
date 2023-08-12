@@ -36,4 +36,20 @@
   <a href="mailto:?subject={{ page.title | url_encode }}&body={{ page.url | absolute_url | url_encode }}"
     class="btn btn--email" title="{{ site.data.ui-text[site.locale].share_on_label | default: 'Share via Email' }}"><i
       class="fas fa-fw fa-envelope" aria-hidden="true"></i><span> Email</span></a>
+
+  <a href="#" class="btn btn--copy" onclick="copyToClipboard('{{ page.url | absolute_url | escape }}'); return false;"
+    title="{{ site.data.ui-text[site.locale].copy_link_label | default: 'Copy' }}"><i class="fas fa-fw fa-copy"
+      aria-hidden="true"></i><span> Copy Link</span></a>
 </section>
+
+<script>
+  function copyToClipboard(text) {
+    const textarea = document.createElement('textarea');
+    textarea.value = text;
+    textarea.style.position = 'fixed';
+    document.body.appendChild(textarea);
+    textarea.select();
+    document.execCommand('copy');
+    document.body.removeChild(textarea);
+  }
+</script>
