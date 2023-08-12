@@ -1,5 +1,5 @@
-current directory: /home/ransomsec/Desktop/minimal-mistakes/vendor/bundle/ruby/3.1.0/gems/ffi-1.15.5/ext/ffi_c
-/usr/bin/ruby3.1 -I /usr/lib/ruby/vendor_ruby -r ./siteconf20230811-63049-myyu9r.rb extconf.rb
+current directory: /home/ransomsec/Desktop/cybermuhafiz.github.io/vendor/bundle/ruby/3.1.0/gems/ffi-1.15.5/ext/ffi_c
+/usr/bin/ruby3.1 -I /usr/lib/ruby/vendor_ruby -r ./siteconf20230813-72338-tff56b.rb extconf.rb
 checking for ffi_prep_closure_loc() in -lffi... yes
 checking for ffi_prep_cif_var()... yes
 checking for ffi_raw_call()... yes
@@ -8,10 +8,10 @@ checking for whether -pthread is accepted as LDFLAGS... yes
 creating extconf.h
 creating Makefile
 
-current directory: /home/ransomsec/Desktop/minimal-mistakes/vendor/bundle/ruby/3.1.0/gems/ffi-1.15.5/ext/ffi_c
+current directory: /home/ransomsec/Desktop/cybermuhafiz.github.io/vendor/bundle/ruby/3.1.0/gems/ffi-1.15.5/ext/ffi_c
 make DESTDIR\= clean
 
-current directory: /home/ransomsec/Desktop/minimal-mistakes/vendor/bundle/ruby/3.1.0/gems/ffi-1.15.5/ext/ffi_c
+current directory: /home/ransomsec/Desktop/cybermuhafiz.github.io/vendor/bundle/ruby/3.1.0/gems/ffi-1.15.5/ext/ffi_c
 make DESTDIR\=
 compiling AbstractMemory.c
 compiling ArrayType.c
@@ -38,6 +38,6 @@ compiling Variadic.c
 compiling ffi.c
 linking shared-object ffi_c.so
 
-current directory: /home/ransomsec/Desktop/minimal-mistakes/vendor/bundle/ruby/3.1.0/gems/ffi-1.15.5/ext/ffi_c
+current directory: /home/ransomsec/Desktop/cybermuhafiz.github.io/vendor/bundle/ruby/3.1.0/gems/ffi-1.15.5/ext/ffi_c
 make DESTDIR\= install
-/usr/bin/install -c -m 0755 ffi_c.so ./.gem.20230811-63049-1ac3m8
+/usr/bin/install -c -m 0755 ffi_c.so ./.gem.20230813-72338-81odv

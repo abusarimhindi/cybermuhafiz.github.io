@@ -1,16 +1,16 @@
-current directory: /home/ransomsec/Desktop/minimal-mistakes/vendor/bundle/ruby/3.1.0/gems/http_parser.rb-0.8.0/ext/ruby_http_parser
-/usr/bin/ruby3.1 -I /usr/lib/ruby/vendor_ruby -r ./siteconf20230811-63049-cdtjpd.rb extconf.rb
+current directory: /home/ransomsec/Desktop/cybermuhafiz.github.io/vendor/bundle/ruby/3.1.0/gems/http_parser.rb-0.8.0/ext/ruby_http_parser
+/usr/bin/ruby3.1 -I /usr/lib/ruby/vendor_ruby -r ./siteconf20230813-72338-5ej8bk.rb extconf.rb
 creating Makefile
 
-current directory: /home/ransomsec/Desktop/minimal-mistakes/vendor/bundle/ruby/3.1.0/gems/http_parser.rb-0.8.0/ext/ruby_http_parser
+current directory: /home/ransomsec/Desktop/cybermuhafiz.github.io/vendor/bundle/ruby/3.1.0/gems/http_parser.rb-0.8.0/ext/ruby_http_parser
 make DESTDIR\= clean
 
-current directory: /home/ransomsec/Desktop/minimal-mistakes/vendor/bundle/ruby/3.1.0/gems/http_parser.rb-0.8.0/ext/ruby_http_parser
+current directory: /home/ransomsec/Desktop/cybermuhafiz.github.io/vendor/bundle/ruby/3.1.0/gems/http_parser.rb-0.8.0/ext/ruby_http_parser
 make DESTDIR\=
 compiling ruby_http_parser.c
 compiling ryah_http_parser.c
 linking shared-object ruby_http_parser.so
 
-current directory: /home/ransomsec/Desktop/minimal-mistakes/vendor/bundle/ruby/3.1.0/gems/http_parser.rb-0.8.0/ext/ruby_http_parser
+current directory: /home/ransomsec/Desktop/cybermuhafiz.github.io/vendor/bundle/ruby/3.1.0/gems/http_parser.rb-0.8.0/ext/ruby_http_parser
 make DESTDIR\= install
-/usr/bin/install -c -m 0755 ruby_http_parser.so ./.gem.20230811-63049-eaylmh
+/usr/bin/install -c -m 0755 ruby_http_parser.so ./.gem.20230813-72338-uyj1yl
