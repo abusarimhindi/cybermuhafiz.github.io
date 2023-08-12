@@ -2,23 +2,22 @@
 {% capture video_provider %}{{ include.provider }}{% endcapture %}
 {% capture video_danmaku %}{{ include.danmaku | default: 0 }}{% endcapture %}
 
-{% capture video_src %}
+{% capture video_embed_code %}
   {% case video_provider %}
   {% when "vimeo" %}
-    https://player.vimeo.com/video/{{ video_id }}?dnt=true
+    <iframe src="https://player.vimeo.com/video/{{ video_id }}" frameborder="0" allowfullscreen></iframe>
   {% when "youtube" %}
-    https://www.youtube-nocookie.com/embed/{{ video_id }}
+    <iframe src="https://www.youtube.com/embed/{{ video_id }}" frameborder="0" allowfullscreen></iframe>
   {% when "google-drive" %}
-    https://drive.google.com/file/d/{{ video_id }}/preview
+    <iframe src="https://drive.google.com/file/d/{{ video_id }}/preview" frameborder="0" allowfullscreen></iframe>
   {% when "bilibili" %}
-    https://player.bilibili.com/player.html?bvid={{ video_id }}&page=1&as_wide=1&high_quality=1&danmaku={{ video_danmaku }}
+    <iframe src="https://player.bilibili.com/player.html?bvid={{ video_id }}&page=1&as_wide=1&high_quality=1&danmaku={{ video_danmaku }}" frameborder="0" allowfullscreen></iframe>
   {% endcase %}
 {% endcapture %}
-{% assign video_src = video_src | strip %}
+{% assign video_embed_code = video_embed_code | strip %}
 
-<!-- Courtesy of embedresponsively.com -->
-{% unless video_src == "" %}
+{% unless video_embed_code == "" %}
   <div class="responsive-video-container">
-    <iframe src="{{ video_src }}" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowfullscreen></iframe>
+    {{ video_embed_code }}
   </div>
 {% endunless %}
