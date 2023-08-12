@@ -1,0 +1,30 @@
+abusarim:
+  name        : "ابو صارم"
+  bio         : "پرو ہیکر!"
+  avatar      : "/assets/images/abusarim.png"
+  links:
+    # - label: "Email"
+      # icon: "fas fa-fw fa-envelope-square"
+      # url: "mailto:billyrick@rick.com"
+    - label: "ٹیلیگرام"
+      icon: "fas fa-fw fa-link"
+      url: "https://t.me/abusarimbot"
+    - label: "website"
+      icon: "fas fa-fw fa-link"
+      url: "https://cybermuhafiz.github.io"
+
+
+saif:
+  name        : "محمد سیف"
+  bio         :  "طالب علم!"
+  avatar      : "/assets/images/saif.jpg"
+  links:
+    - label: "ٹیلیگرام"
+      icon: "fas fa-fw fa-link"
+      url: "https://t.me/saifu_sunb"
+    - label: "ویب سائٹ"
+      icon: "fas fa-fw fa-link"
+      url: "https://cybermuhafiz.github.io"
+    - label: "ٹویٹر"
+      icon: "fab fa-fw fa-twitter-square"
+      url: "https://twitter.com/saifu_sunb"
