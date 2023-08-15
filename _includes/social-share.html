@@ -37,10 +37,31 @@
     class="btn btn--email" title="{{ site.data.ui-text[site.locale].share_on_label | default: 'Share via Email' }}"><i
       class="fas fa-fw fa-envelope" aria-hidden="true"></i><span> Email</span></a>
 
-  <a href="#" class="btn btn--copy" onclick="copyToClipboard('{{ page.url | absolute_url | escape }}'); return false;"
+  <!--   <a href="#" class="btn btn--copy" onclick="copyToClipboard('{{ page.url | absolute_url | escape }}'); return false;" -->
+  <!--     title="{{ site.data.ui-text[site.locale].copy_link_label | default: 'Copy' }}"><i class="fas fa-fw fa-copy" -->
+  <!--       aria-hidden="true"></i><span> Copy Link</span></a> -->
+  <!-- </section> -->
+  <!---->
+  <!-- <script> -->
+  <!--   function copyToClipboard(text) { -->
+  <!--     const textarea = document.createElement('textarea'); -->
+  <!--     textarea.value = text; -->
+  <!--     textarea.style.position = 'fixed'; -->
+  <!--     document.body.appendChild(textarea); -->
+  <!--     textarea.select(); -->
+  <!--     document.execCommand('copy'); -->
+  <!--     document.body.removeChild(textarea); -->
+  <!--   } -->
+  <!-- </script> -->
+
+
+  <a href="#" class="btn btn--copy"
+    onclick="copyLinkAndShowPopup('{{ page.url | absolute_url | escape }}'); return false;"
     title="{{ site.data.ui-text[site.locale].copy_link_label | default: 'Copy' }}"><i class="fas fa-fw fa-copy"
       aria-hidden="true"></i><span> Copy Link</span></a>
 </section>
+
+<span id="copy-popup" class="copy-popup">Copied</span>
 
 <script>
   function copyToClipboard(text) {
@@ -52,4 +73,35 @@
     document.execCommand('copy');
     document.body.removeChild(textarea);
   }
+
+  function showCopyPopup() {
+    const popup = document.getElementById('copy-popup');
+    popup.style.display = 'block';
+    setTimeout(function () {
+      popup.style.display = 'none';
+    }, 1500); // Adjust the time as needed
+  }
+
+  function copyLinkAndShowPopup(link) {
+    copyToClipboard(link);
+    showCopyPopup();
+  }
 </script>
+
+
+
+<style>
+  .copy-popup {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(0, 0, 0, 0.8);
+    color: white;
+    padding: 4px 8px;
+    border-radius: 7px;
+    font-size: 15px;
+    transition: opacity 0.3s ease-in-out;
+  }
+</style>
