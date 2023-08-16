@@ -1,7 +1,7 @@
 ---
 title: ایک تھا الگورتھم!
 author: abusarim
-excerpt:  اس بلاگ میں آپ جا پائیں گے کی الگورتھم کب اور کیسے وجود میں آیا!
+excerpt:  اس بلاگ میں آپ جان  پائیں گے کی الگورتھم کب اور کیسے وجود میں آیا!
 header:
   image: 'assets/images/headers/algorithm.png'
 ---
