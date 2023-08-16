@@ -1,8 +1,11 @@
 ---
 title: چیٹ جی پی ٹی کیا بلا ہے؟؟
-excerpt: The RCE
 author: saif
 excerpt: آئے چیٹ جی پی ٹی کا جائزہ لیں!
+header:
+  overlay_image: '/assets/images/headers/chat.png'
+  overlay_filter: 0.4
+show_overlay_excerpt: false
 ---
 
 * toc

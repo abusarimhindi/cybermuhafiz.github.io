@@ -2,6 +2,9 @@
 title: (Linus Torvalds)  اوپن سورس انقلاب کا معمار
 author: abusarim
 excerpt:  اوپن سورس کی کہانی!
+header:
+  overlay_image: 'assets/images/headers/open.jpg'
+  overlay_filter: 0.4
 ---
 
 

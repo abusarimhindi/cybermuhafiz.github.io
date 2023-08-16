@@ -3,8 +3,8 @@ author: saif
 title: دی رینسم فائل
 excerpt:  اس بلاگ پوسٹ میں ہم رینسم ویئر کے بارے میں جانیں گے، اور اسکے کام کرنے کے طریقہ کو سمجھِیں گے۔
 header:
-  overlay_image: '/assets/images/ransomware/header.png'
-  overlay_filter: 0.9
+  overlay_image: '/assets/images/headers/header.png'
+  overlay_filter: 0.4
 ---
 
 * toc
