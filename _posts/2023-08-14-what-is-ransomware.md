@@ -3,7 +3,7 @@ author: saif
 title: دی رینسم فائل
 excerpt:  اس بلاگ پوسٹ میں ہم رینسم ویئر کے بارے میں جانیں گے، اور اسکے کام کرنے کے طریقہ کو سمجھِیں گے۔
 header:
-  image: '/assets/images/headers/ransomware.png'
+  image: '/assets/images/headers/locker.png'
 ---
 
 * toc
