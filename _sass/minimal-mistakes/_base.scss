@@ -16,6 +16,10 @@ body {
   line-height: 1.5;
   direction: rtl;
   user-select: none;
+  -webkit-user-select: none; // ios-safari
+  -webkit-touch-callout: none; // Safari
+  -moz-user-select: none; // Mozilla 
+  -khtml-user-select: none; // KHTML Browser
 
   &.overflow--hidden {
     /* when primary navigation is visible, the content in the background won't scroll */
