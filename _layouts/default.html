@@ -47,7 +47,6 @@
 
   <script src="{{ '/assets/js/block-img.js' | relative_url }}"></script>
 
-
   <script>
     document.addEventListener('DOMContentLoaded', function () {
       const increaseButton = document.getElementById('increase-font');
@@ -55,8 +54,15 @@
       const resetButton = document.getElementById('reset-font');
       const textElements = document.querySelectorAll('p, li, dl');
 
-      let defaultFontSize = 22; // Default font size for laptops and desktops
-      let currentFontSize = defaultFontSize;
+      let defaultFontSizeDesktop = 22; // Default font size for laptops and desktops
+      let defaultFontSizeMobile = 14; // Default font size for mobile devices
+      let currentFontSize;
+
+      if (window.innerWidth >= 768) {
+        currentFontSize = defaultFontSizeDesktop;
+      } else {
+        currentFontSize = defaultFontSizeMobile;
+      }
 
       increaseButton.addEventListener('click', function () {
         currentFontSize += 2;
@@ -64,12 +70,16 @@
       });
 
       decreaseButton.addEventListener('click', function () {
-        currentFontSize = Math.max(currentFontSize - 2, 10); // Limit minimum font size
+        currentFontSize = Math.max(currentFontSize - 2, 10);
         updateFontSizes();
       });
 
       resetButton.addEventListener('click', function () {
-        currentFontSize = defaultFontSize; // Reset font size to default
+        if (window.innerWidth >= 768) {
+          currentFontSize = defaultFontSizeDesktop;
+        } else {
+          currentFontSize = defaultFontSizeMobile;
+        }
         updateFontSizes();
       });
 
