@@ -19,7 +19,7 @@ document.addEventListener("DOMContentLoaded", function() {
   window.addEventListener("scroll", function() {
     // if (window.location.pathname !== "/") { # uncomment this if you want font selection active in base
     const scrollY = window.scrollY || window.pageYOffset;
-    if (scrollY > 100) {
+    if (scrollY > 200) {
       fontSelectWrapper.style.display = "none";
     } else {
       fontSelectWrapper.style.display = "block";
