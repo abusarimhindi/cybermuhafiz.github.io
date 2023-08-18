@@ -96,7 +96,7 @@ document.addEventListener("DOMContentLoaded", function () {
   // Toggle font selection dropdown visibility while scrolling a post
   window.addEventListener("scroll", function () {
     const scrollY = window.scrollY || window.pageYOffset;
-    if (scrollY > 100) {
+    if (scrollY > 200) {
       fontSelectWrapper.style.display = "block";
     } else {
       fontSelectWrapper.style.display = "none";
