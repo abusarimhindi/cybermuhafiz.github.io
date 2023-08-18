@@ -26,6 +26,16 @@
     <button id="reset-font">Reset</button>
   </div>
 
+  <div id="font-select-wrapper" <label for="font-select" style="color: white; margin-right: 5px; font-size: 14px;">
+    فونٹ: </label>
+    <select id="font-select" style="color: white; font-size: 14px; padding: 2px; background-color: #1a1f35;">
+      <option value="default">ڈیفالٹ</option>
+      <option value="jameel">جمیل نوری</option>
+      <option value="mahar">مہر نستعلیق</option>
+      <option value="nafees">نفیس</option>
+    </select>
+  </div>
+
   <div class="initial-content">
     {{ content }}
   </div>
@@ -46,79 +56,6 @@
   {% include scripts.html %}
 
   <script src="{{ '/assets/js/block-img.js' | relative_url }}"></script>
-
-
-
-  <script>
-    document.addEventListener('DOMContentLoaded', function () {
-      const fontControls = document.getElementById('font-controls');
-      const increaseButton = document.getElementById('increase-font');
-      const decreaseButton = document.getElementById('decrease-font');
-      const resetButton = document.getElementById('reset-font');
-
-      let textElements = document.querySelectorAll('p, li, dl');
-      let defaultFontSizeDesktop = 22; // Default font size for laptops and desktops
-      let defaultFontSizeMobile = 12; // Default font size for mobile devices
-      let currentFontSize;
-
-      // Function to update font sizes
-      function updateFontSizes() {
-        textElements.forEach(element => {
-          element.style.fontSize = currentFontSize + 'px';
-        });
-      }
-
-      // Set initial font size based on window width
-      function setInitialFontSize() {
-        if (window.innerWidth >= 768) {
-          currentFontSize = defaultFontSizeDesktop;
-        } else {
-          currentFontSize = defaultFontSizeMobile;
-        }
-        updateFontSizes();
-      }
-
-      // Update font size on reset
-      function resetFontSize() {
-        if (window.innerWidth >= 768) {
-          currentFontSize = defaultFontSizeDesktop;
-        } else {
-          currentFontSize = defaultFontSizeMobile;
-        }
-        updateFontSizes();
-      }
-
-      // Toggle font controls visibility based on scroll position
-      function toggleFontControlsVisibility() {
-        if (window.scrollY > 200) {
-          fontControls.style.display = 'flex';
-        } else {
-          fontControls.style.display = 'none';
-        }
-      }
-
-      // Event listeners
-      increaseButton.addEventListener('click', function () {
-        currentFontSize += 2;
-        updateFontSizes();
-      });
-
-      decreaseButton.addEventListener('click', function () {
-        currentFontSize = Math.max(currentFontSize - 2, 10);
-        updateFontSizes();
-      });
-
-      resetButton.addEventListener('click', resetFontSize);
-
-      // Set initial font size and visibility
-      setInitialFontSize();
-      toggleFontControlsVisibility();
-
-      // Listen for scroll events
-      window.addEventListener('scroll', toggleFontControlsVisibility);
-      window.addEventListener('resize', setInitialFontSize);
-    });
-  </script>
 
 
   <style>
@@ -155,21 +92,47 @@
   </style>
 
 
+  <style>
+    #font-select-wrapper {
+      position: fixed;
+      top: 70px;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: rgba(0, 0, 0, 0.8);
+      padding: 10px;
+      border-radius: 10px;
+      z-index: 9999;
+    }
 
-  <div id="font-select-wrapper"
-    style="position: fixed; bottom: 10px; left: 10px; padding: 5px; border-radius: 5px; background-color: #1a1f35;">
-    <label for="font-select" style="color: white; margin-right: 5px; font-size: 14px;">فونٹس: </label>
-    <select id="font-select" style="color: black; font-size: 14px; padding: 2px;">
-      <!-- Set font color, size, and padding to black -->
-      <option value="default">ڈیفالٹ</option>
-      <option value="jameel">جمیل نوری</option>
-      <option value="mahar">مہر نستعلیق</option>
-      <option value="nafees">نفیس</option>
-    </select>
-  </div>
+    #font-select {
+      font-size: 14px;
+      color: white;
+      padding: 2px;
+      border: none;
+      border-radius: 10px;
+      background-color: white;
+      color: white;
+      outline: none;
+      cursor: pointer;
+      transition: background-color white;
+      margin-right: 5px;
+    }
+
+    #font-select:hover {
+      background-color: #1a1f35;
+    }
+
+    #font-select-label {
+      color: white;
+      font-size: 14px;
+    }
+  </style>
 
 
-  <script src="/assets/js/font_fetch.js"></script>
+  <script src="/assets/js/font_manipulation.js"></script>
 
 </body>
 

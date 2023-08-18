@@ -32,6 +32,8 @@
    ========================================================================== */
 
 $doc-font-size: 16 !default;
+// $custom-font: unquote(localStorage.getItem("selectedFont")); 
+// $custom-font: 'Noto Nastaliq Urdu';
 $custom-font: sans-serif;
 
 /* paragraph indention */
