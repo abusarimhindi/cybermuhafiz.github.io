@@ -130,20 +130,4 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   }
 
-  let isScrolling;
-
-  // Listen for scroll events to toggle font controls visibility
-  window.addEventListener("scroll", function () {
-    clearTimeout(isScrolling);
-
-    // Show the font controls
-    fontControls.style.display = "flex";
-    fontSelectWrapper.style.display = "block";
-
-    // Set a timeout to hide the font controls after scrolling stops
-    isScrolling = setTimeout(function () {
-      fontControls.style.display = "none";
-      fontSelectWrapper.style.display = "none";
-    }, 2000); // Adjust the timeout duration as needed
-  });
 });
