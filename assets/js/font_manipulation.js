@@ -76,7 +76,16 @@ document.addEventListener("DOMContentLoaded", function () {
   // Listen for scroll events for font size controls
   window.addEventListener("scroll", toggleFontControlsVisibility);
 
+  // Hide
+
+  // ** This is next pragms **/
+  //
+  //
+  //
+  //
+  // Next Program ;
   // Font changer controls
+
   const fontSelect = document.getElementById("font-select");
   const fontSelectWrapper = document.getElementById("font-select-wrapper");
   const bodyElement = document.body;
@@ -120,4 +129,21 @@ document.addEventListener("DOMContentLoaded", function () {
       bodyElement.style.fontFamily = "'Kasheeda', cursive";
     }
   }
+
+  let isScrolling;
+
+  // Listen for scroll events to toggle font controls visibility
+  window.addEventListener("scroll", function () {
+    clearTimeout(isScrolling);
+
+    // Show the font controls
+    fontControls.style.display = "flex";
+    fontSelectWrapper.style.display = "block";
+
+    // Set a timeout to hide the font controls after scrolling stops
+    isScrolling = setTimeout(function () {
+      fontControls.style.display = "none";
+      fontSelectWrapper.style.display = "none";
+    }, 2000); // Adjust the timeout duration as needed
+  });
 });
