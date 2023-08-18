@@ -47,23 +47,57 @@
 
   <script src="{{ '/assets/js/block-img.js' | relative_url }}"></script>
 
+
+
   <script>
     document.addEventListener('DOMContentLoaded', function () {
+      const fontControls = document.getElementById('font-controls');
       const increaseButton = document.getElementById('increase-font');
       const decreaseButton = document.getElementById('decrease-font');
       const resetButton = document.getElementById('reset-font');
-      const textElements = document.querySelectorAll('p, li, dl');
 
+      let textElements = document.querySelectorAll('p, li, dl');
       let defaultFontSizeDesktop = 22; // Default font size for laptops and desktops
       let defaultFontSizeMobile = 14; // Default font size for mobile devices
       let currentFontSize;
 
-      if (window.innerWidth >= 768) {
-        currentFontSize = defaultFontSizeDesktop;
-      } else {
-        currentFontSize = defaultFontSizeMobile;
+      // Function to update font sizes
+      function updateFontSizes() {
+        textElements.forEach(element => {
+          element.style.fontSize = currentFontSize + 'px';
+        });
       }
 
+      // Set initial font size based on window width
+      function setInitialFontSize() {
+        if (window.innerWidth >= 768) {
+          currentFontSize = defaultFontSizeDesktop;
+        } else {
+          currentFontSize = defaultFontSizeMobile;
+        }
+        updateFontSizes();
+      }
+
+      // Update font size on reset
+      function resetFontSize() {
+        if (window.innerWidth >= 768) {
+          currentFontSize = defaultFontSizeDesktop;
+        } else {
+          currentFontSize = defaultFontSizeMobile;
+        }
+        updateFontSizes();
+      }
+
+      // Toggle font controls visibility based on scroll position
+      function toggleFontControlsVisibility() {
+        if (window.scrollY > 200) {
+          fontControls.style.display = 'flex';
+        } else {
+          fontControls.style.display = 'none';
+        }
+      }
+
+      // Event listeners
       increaseButton.addEventListener('click', function () {
         currentFontSize += 2;
         updateFontSizes();
@@ -74,20 +108,15 @@
         updateFontSizes();
       });
 
-      resetButton.addEventListener('click', function () {
-        if (window.innerWidth >= 768) {
-          currentFontSize = defaultFontSizeDesktop;
-        } else {
-          currentFontSize = defaultFontSizeMobile;
-        }
-        updateFontSizes();
-      });
+      resetButton.addEventListener('click', resetFontSize);
 
-      function updateFontSizes() {
-        textElements.forEach(element => {
-          element.style.fontSize = currentFontSize + 'px';
-        });
-      }
+      // Set initial font size and visibility
+      setInitialFontSize();
+      toggleFontControlsVisibility();
+
+      // Listen for scroll events
+      window.addEventListener('scroll', toggleFontControlsVisibility);
+      window.addEventListener('resize', setInitialFontSize);
     });
   </script>
 
