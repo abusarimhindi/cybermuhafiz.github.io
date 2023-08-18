@@ -116,8 +116,8 @@ document.addEventListener("DOMContentLoaded", function () {
       bodyElement.style.fontFamily = "'Jameel Noori', sans-serif";
     } else if (selectedFont === "mahar") {
       bodyElement.style.fontFamily = "'Mahar Nastaliq', cursive";
-    } else if (selectedFont === "nafees") {
-      bodyElement.style.fontFamily = "'Nafees', cursive";
+    } else if (selectedFont === "kasheeda") {
+      bodyElement.style.fontFamily = "'Kasheeda', cursive";
     }
   }
 });

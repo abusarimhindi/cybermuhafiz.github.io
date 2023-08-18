@@ -23,6 +23,14 @@
   font-style: normal;
 }
 
+
+@font-face {
+  font-family: 'Kasheeda';
+  src: url('fonts/jameel_kasheeda.ttf') format('truetype'); /* Corrected format value */
+  font-weight: normal;
+  font-style: normal;
+}
+
 /* ==========================================================================
    Variables
    ========================================================================== */
@@ -34,7 +42,7 @@
 $doc-font-size: 16 !default;
 // $custom-font: unquote(localStorage.getItem("selectedFont")); 
 // $custom-font: 'Noto Nastaliq Urdu';
-$custom-font: sans-serif;
+$custom-font: 'Mahar Nastaliq';
 
 /* paragraph indention */
 $paragraph-indent: false !default; // true, false (default)
