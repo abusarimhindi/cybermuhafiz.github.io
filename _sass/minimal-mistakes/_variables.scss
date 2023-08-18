@@ -1,5 +1,27 @@
 @import url('https://fonts.google.com/noto/specimen/Noto+Nastaliq+Urdu');
-@import url('fonts/jameel_noori.ttf');
+
+@font-face {
+  font-family: 'Jameel Noori';
+  src: url('fonts/jameel_noori.ttf') format('truetype'); /* Corrected format value */
+  font-weight: normal;
+  font-style: normal;
+}
+
+
+@font-face {
+  font-family: 'Mahar Nastaliq';
+  src: url('fonts/mahar.ttf') format('truetype'); /* Corrected format value */
+  font-weight: normal;
+  font-style: normal;
+}
+
+
+@font-face {
+  font-family: 'Nafees';
+  src: url('fonts/nafees.ttf') format('truetype'); /* Corrected format value */
+  font-weight: normal;
+  font-style: normal;
+}
 
 /* ==========================================================================
    Variables
@@ -10,32 +32,32 @@
    ========================================================================== */
 
 $doc-font-size: 16 !default;
-$custom-font: 'Noto Nastaliq Urdu';
+$custom-font: sans-serif;
 
 /* paragraph indention */
 $paragraph-indent: false !default; // true, false (default)
 $indent-var: 1.3em !default;
 
-/* system typefaces */
-$serif: Georgia, Times, serif !default;
-$sans-serif: -apple-system, BlinkMacSystemFont, "Roboto", "Segoe UI",
+// /* system typefaces */
+$serif: $custom-font, Georgia, Times, serif !default;
+$sans-serif: $custom-font, -apple-system, BlinkMacSystemFont, "Roboto", "Segoe UI",
   "Helvetica Neue", "Lucida Grande", Arial, sans-serif !default;
 $monospace: Monaco, Consolas, "Lucida Console", monospace !default;
 
-/* sans serif typefaces */
-$sans-serif-narrow: $sans-serif default;
-$helvetica: Helvetica, "Helvetica Neue", Arial, sans-serif !default;
+// /* sans serif typefaces */
+$sans-serif-narrow: $custom-font, $sans-serif !default;
+$helvetica: $custom-font, Helvetica, "Helvetica Neue", Arial, sans-serif !default;
 
 /* serif typefaces */
-$georgia: $custom-font, serif !default;
-$times: $custom-font, Times, serif !default;
-$bodoni: $custom-font, "Bodoni MT", serif !default;
-$calisto: $custom-font,"Calisto MT", serif !default;
-$garamond:$custom-font, Garamond, serif !default;
+$georgia: $custom-font, serif ;
+$times: $custom-font, Times, serif ;
+$bodoni: $custom-font, "Bodoni MT", serif ;
+$calisto: $custom-font,"Calisto MT", serif ;
+$garamond:$custom-font, Garamond, serif ;
 
-$global-font-family: $custom-font default;
-$header-font-family: $custom-font, $sans-serif default;
-$caption-font-family:$custom-font, $serif default;
+$global-font-family: $custom-font ;
+$header-font-family: $custom-font, $sans-serif;
+$caption-font-family:$custom-font, $serif;
 
 /* type scale */
 $type-size-1: 2.441em !default; // ~39.056px
