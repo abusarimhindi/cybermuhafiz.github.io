@@ -20,6 +20,12 @@
   {% include_cached skip-links.html %}
   {% include_cached masthead.html %}
 
+  <div id="font-controls">
+    <button id="increase-font">A+</button>
+    <button id="decrease-font">A-</button>
+    <button id="reset-font">Reset</button>
+  </div>
+
   <div class="initial-content">
     {{ content }}
   </div>
@@ -40,6 +46,76 @@
   {% include scripts.html %}
 
   <script src="{{ '/assets/js/block-img.js' | relative_url }}"></script>
+
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      const increaseButton = document.getElementById('increase-font');
+      const decreaseButton = document.getElementById('decrease-font');
+      const resetButton = document.getElementById('reset-font');
+      const textElements = document.querySelectorAll('p, li, dl');
+
+      let defaultFontSize = 22; // Default font size for laptops and desktops
+      let currentFontSize = defaultFontSize;
+
+      increaseButton.addEventListener('click', function () {
+        currentFontSize += 2;
+        updateFontSizes();
+      });
+
+      decreaseButton.addEventListener('click', function () {
+        currentFontSize = Math.max(currentFontSize - 2, 10); // Limit minimum font size
+        updateFontSizes();
+      });
+
+      resetButton.addEventListener('click', function () {
+        currentFontSize = defaultFontSize; // Reset font size to default
+        updateFontSizes();
+      });
+
+      function updateFontSizes() {
+        textElements.forEach(element => {
+          element.style.fontSize = currentFontSize + 'px';
+        });
+      }
+    });
+  </script>
+
+
+  <style>
+    #font-controls {
+      position: fixed;
+      top: 20px;
+      /* Adjust as needed */
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: rgba(0, 0, 0, 0.8);
+      padding: 10px;
+      border-radius: 10px;
+      z-index: 9999;
+    }
+
+    #font-controls button {
+      padding: 5px 10px;
+      margin: 0 5px;
+      font-size: 14px;
+      cursor: pointer;
+      background-color: #1a1f35;
+      color: white;
+      border: none;
+      border-radius: 10px;
+      transition: background-color 0.3s ease-in-out;
+    }
+
+    #font-controls button:hover {
+      background-color: #1a1f35;
+    }
+  </style>
+
+
 </body>
 
 </html>
