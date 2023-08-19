@@ -1,4 +1,4 @@
-document.addEventListener("DOMContentLoaded", function () {
+document.addEventListener("DOMContentLoaded", function() {
 	// Font size controls
 	const fontControls = document.getElementById("font-controls");
 	const increaseButton = document.getElementById("increase-font");
@@ -55,13 +55,13 @@ document.addEventListener("DOMContentLoaded", function () {
 	}
 
 	// Event listeners for font size controls
-	increaseButton.addEventListener("click", function () {
+	increaseButton.addEventListener("click", function() {
 		currentFontSize += 2;
 		updateFontSizes();
 		localStorage.setItem("fontSize", currentFontSize.toString());
 	});
 
-	decreaseButton.addEventListener("click", function () {
+	decreaseButton.addEventListener("click", function() {
 		currentFontSize = Math.max(currentFontSize - 2, 10);
 		updateFontSizes();
 		localStorage.setItem("fontSize", currentFontSize.toString());
@@ -103,7 +103,7 @@ document.addEventListener("DOMContentLoaded", function () {
 	}
 
 	// Toggle font selection dropdown visibility while scrolling a post
-	window.addEventListener("scroll", function () {
+	window.addEventListener("scroll", function() {
 		const scrollY = window.scrollY || window.pageYOffset;
 		if (scrollY > 200) {
 			fontSelectWrapper.style.display = "block";
@@ -112,7 +112,7 @@ document.addEventListener("DOMContentLoaded", function () {
 		}
 	});
 
-	fontSelect.addEventListener("change", function () {
+	fontSelect.addEventListener("change", function() {
 		const selectedFont = fontSelect.value;
 		applyFontStyle(selectedFont);
 		localStorage.setItem("selectedFont", selectedFont);
@@ -131,20 +131,25 @@ document.addEventListener("DOMContentLoaded", function () {
 	}
 
 	let isScrolling;
+	let userInteracted = false;
 
-	// Listen for scroll events to toggle font controls visibility
-	window.addEventListener("scroll", function () {
+	window.addEventListener("scroll", function() {
 		clearTimeout(isScrolling);
 
-		// Show the font controls
-		fontControls.style.display = "flex";
-		fontSelectWrapper.style.display = "block";
+		const scrollY = window.scrollY || window.pageYOffset;
 
-		// Set a timeout to hide the font controls after scrolling stops
-		isScrolling = setTimeout(function () {
-			fontControls.style.display = "none";
-			fontSelectWrapper.style.display = "none";
-		}, 2000); // Adjust the timeout duration as needed
+		if (scrollY > 200) {
+			// Show the font controls
+			fontControls.style.display = "flex";
+			fontSelectWrapper.style.display = "block";
+
+			// Set a timeout to hide the font controls after scrolling stops
+			isScrolling = setTimeout(function() {
+				if (!userInteracted) {
+					fontControls.style.display = "none";
+					fontSelectWrapper.style.display = "none";
+				}
+			}, 2000); // Adjust the timeout duration as needed
+		}
 	});
-	// });
 });
